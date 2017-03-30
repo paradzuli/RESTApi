@@ -22,13 +22,10 @@ namespace RestWebApi.Controllers
             _tokenServices = tokenServices;
         }
 
-        [Route("login")]
-        [Route("authenticate")]
-        [Route("get/token")]
+       // [Route("login")]
         public HttpResponseMessage Authenticate()
         {
-
-            if (System.Threading.Thread.CurrentPrincipal != null &&
+           if (System.Threading.Thread.CurrentPrincipal != null &&
                 System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
             {
                 var basicAuthenticationIdentity =

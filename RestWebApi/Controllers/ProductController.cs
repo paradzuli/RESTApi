@@ -14,7 +14,6 @@ using RestWebApi.Filters;
 namespace RestWebApi.Controllers
 {
     [AuthorizationRequired]
-    [RoutePrefix("v1/Products/Product")]
     public class ProductController : ApiController
     {
 
@@ -41,10 +40,6 @@ namespace RestWebApi.Controllers
         }
 
         // GET: api/Product/5
-        [Route("productid/{id?}")]
-        [Route("particularproduct/{id?}")]
-        [Route("myproduct/{id:range(1,3)}")]
-        [Route(@"id/{e:regex(^[0-9]$)}")]
         public HttpResponseMessage Get(int? id)
         {
             if (id != null)

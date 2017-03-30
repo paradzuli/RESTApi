@@ -12,7 +12,7 @@ namespace RestWebApi
         {
             // Web API configuration and services
             //-- Uncomment the following if applying globally
-            //GlobalConfiguration.Configuration.Filters.Add(new ApiAuthenticationFilter());
+            config.Filters.Add(new ApiAuthenticationFilter());
             config.Filters.Add(new LoggingFilterAttribute());
             config.Filters.Add(new GlobalExceptionAttribute());
 
@@ -20,7 +20,7 @@ namespace RestWebApi
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+                name: "MvcDefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
